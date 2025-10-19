@@ -12,9 +12,11 @@ open dist/FaradayShieldAnalyser.app
 # Login: admin / admin123
 ```
 
-**Android APK:**
-- Build automatically via GitHub Actions
-- See `documentation/DEPLOY_APK.md` for instructions
+**Android (via Termux):**
+- Use the pre-packaged Termux version
+- Install Termux from F-Droid
+- See `PHONE_TESTING_QUICK_REFERENCE.txt` for instructions
+- Note: Native APK build requires extensive restructuring (FastAPI → Kivy/WebView)
 
 ### For Developers:
 
@@ -93,21 +95,19 @@ python3 build_native_mac.py
 # Result: dist/FaradayShieldAnalyser.app
 ```
 
-### Android APK
+### Android (Termux Method - Recommended)
 
-Push to GitHub - automatic build via GitHub Actions:
 ```bash
-git add .
-git commit -m "Ready for APK build"
-git push origin main
-# Check "Actions" tab for build progress
+# Package for Termux
+./package_android.sh
+
+# Transfer ShieldAnalyser-Android.zip to phone
+# Follow PHONE_TESTING_QUICK_REFERENCE.txt
 ```
 
-Manual build (requires Linux):
-```bash
-pip install buildozer
-buildozer android debug
-```
+**Note:** Building a native Android APK requires restructuring the app architecture
+(FastAPI web server → Android native app). The Termux method provides full
+functionality and is the recommended approach for Android.
 
 ## 📚 Documentation
 
