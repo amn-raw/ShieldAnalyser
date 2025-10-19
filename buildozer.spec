@@ -23,7 +23,7 @@ version = 1.0.0
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy==2.3.0,android,pyjnius,fastapi,uvicorn,pandas,openpyxl,python-multipart,jinja2,markupsafe,typing-extensions,starlette,anyio,sniffio,idna,certifi,pydantic,pydantic-core,annotated-types
+requirements = python3,kivy==2.3.0,pandas,openpyxl,et-xmlfile,python-dateutil,pytz,six,numpy
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
