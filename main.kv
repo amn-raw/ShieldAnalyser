@@ -1,0 +1,49 @@
+#:kivy 2.3.0
+
+<Button>:
+    font_size: 20
+    size_hint: 1, None
+    height: 80
+
+BoxLayout:
+    orientation: 'vertical'
+    padding: 20
+    spacing: 20
+    
+    canvas.before:
+        Color:
+            rgba: 0.4, 0.49, 0.92, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    
+    Label:
+        text: 'Faraday Shield Analyser'
+        font_size: 32
+        size_hint: 1, 0.2
+        bold: True
+        color: 1, 1, 1, 1
+    
+    Label:
+        id: status_label
+        text: 'Starting server...'
+        size_hint: 1, 0.2
+        color: 1, 1, 1, 1
+        font_size: 18
+    
+    Button:
+        id: open_button
+        text: 'Open App in Browser'
+        size_hint: 1, None
+        height: 80
+        disabled: True
+        background_color: 0.3, 0.8, 0.3, 1
+        on_press: app.open_browser()
+    
+    Label:
+        text: 'Data stored locally on device\nLogin: admin / admin123'
+        size_hint: 1, 0.4
+        color: 1, 1, 1, 1
+        font_size: 16
+        halign: 'center'
+

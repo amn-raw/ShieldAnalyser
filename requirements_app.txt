@@ -1,0 +1,13 @@
+# Requirements for standalone application
+fastapi==0.115.0
+uvicorn==0.32.0
+python-multipart==0.0.12
+pandas>=2.2.0
+openpyxl==3.1.5
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-dotenv==1.0.1
+
+# For building executables
+pyinstaller==6.11.1
+

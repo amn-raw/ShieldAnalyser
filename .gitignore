@@ -1,0 +1,67 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+*.egg-info/
+dist-python/
+.eggs/
+
+# PyInstaller
+build/
+dist/
+*.spec
+!buildozer.spec
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+*.icns
+app_icon.iconset/
+app_icon_*.png
+
+# Build artifacts
+*.zip
+*.apk
+*.aab
+*.ipa
+bin/
+.buildozer/
+.buildozer_global/
+
+# Android/Buildozer
+.gradle/
+local.properties
+
+# Temporary files
+*.log
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Test/Experimental files
+experiment*.xlsx
+ShieldAnalyser-Android/
+*_test.py
+*_backup.*
+
+# Keep only necessary icons
+# Root icon.png is needed for buildozer
+# Static images are needed for app
+!icon.png
+!static/images/*.png
+
+# Logs
+logs/
+*.log

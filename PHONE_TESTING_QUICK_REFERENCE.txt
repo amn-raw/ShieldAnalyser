@@ -1,0 +1,201 @@
+═══════════════════════════════════════════════════════════════
+  📱 ANDROID PHONE TESTING - QUICK REFERENCE CARD 📱
+═══════════════════════════════════════════════════════════════
+
+📦 WHAT YOU NEED:
+   • Android phone
+   • File: ShieldAnalyser-Android.zip (on your Desktop)
+   • App: Termux (from F-Droid, NOT Google Play)
+
+───────────────────────────────────────────────────────────────
+STEP 1: INSTALL TERMUX (5 MINUTES)
+───────────────────────────────────────────────────────────────
+
+1. On your phone, open browser
+2. Go to: https://f-droid.org/
+3. Download F-Droid app
+4. Open F-Droid
+5. Search "Termux"
+6. Install Termux
+
+───────────────────────────────────────────────────────────────
+STEP 2: TRANSFER FILE TO PHONE (CHOOSE ONE METHOD)
+───────────────────────────────────────────────────────────────
+
+METHOD A - EMAIL (EASIEST):
+  1. Email ShieldAnalyser-Android.zip to yourself
+  2. On phone, open email
+  3. Download attachment
+  4. File goes to Download folder
+
+METHOD B - USB CABLE:
+  1. Connect phone to Mac with USB
+  2. On Mac, open Android File Transfer
+  3. Copy ShieldAnalyser-Android.zip to Download folder
+
+METHOD C - CLOUD (GOOGLE DRIVE):
+  1. On Mac, upload ShieldAnalyser-Android.zip to Google Drive
+  2. On phone, open Google Drive app
+  3. Download the file
+
+───────────────────────────────────────────────────────────────
+STEP 3: INSTALL IN TERMUX (10 MINUTES)
+───────────────────────────────────────────────────────────────
+
+Open Termux app and type these commands:
+
+1. Grant storage permission:
+   termux-setup-storage
+   [Press Allow when prompted]
+
+2. Update and install Python:
+   pkg update
+   pkg install python -y
+   [Wait 2-3 minutes for installation]
+
+3. Go to home directory:
+   cd ~
+
+4. Copy the ZIP file:
+   cp /storage/emulated/0/Download/ShieldAnalyser-Android.zip .
+   [Note: that's a dot at the end]
+
+5. Extract it:
+   unzip ShieldAnalyser-Android.zip
+
+6. Enter the folder:
+   cd ShieldAnalyser-Android
+
+7. Make script executable:
+   chmod +x run.sh
+
+8. Run the app:
+   ./run.sh
+   [First time: installs dependencies, takes 2-3 minutes]
+   [Shows: "Running at http://localhost:8000"]
+
+───────────────────────────────────────────────────────────────
+STEP 4: ACCESS IN BROWSER
+───────────────────────────────────────────────────────────────
+
+1. Keep Termux app running (minimize it, don't close)
+2. Open Chrome on your phone
+3. In address bar, type: localhost:8000
+4. Press Go
+5. You'll see the login screen
+6. Login:
+   Username: admin
+   Password: admin123
+7. Start using the app!
+
+───────────────────────────────────────────────────────────────
+IMPORTANT NOTES:
+───────────────────────────────────────────────────────────────
+
+✓ Termux MUST stay running while using the app
+✓ Use "localhost:8000" not "127.0.0.1:8000"
+✓ First run takes longer (installs dependencies)
+✓ Subsequent runs are faster (10-15 seconds)
+✓ All data saves in ~/ShieldAnalyser-Android/
+
+───────────────────────────────────────────────────────────────
+TO STOP THE APP:
+───────────────────────────────────────────────────────────────
+
+In Termux:
+  - Press CTRL+C (or close Termux)
+
+───────────────────────────────────────────────────────────────
+TO RESTART THE APP:
+───────────────────────────────────────────────────────────────
+
+Open Termux and type:
+  cd ~/ShieldAnalyser-Android
+  ./run.sh
+
+───────────────────────────────────────────────────────────────
+TROUBLESHOOTING:
+───────────────────────────────────────────────────────────────
+
+Problem: Can't find ZIP file in Termux
+Solution: ls -la /storage/emulated/0/Download/
+
+Problem: "Permission denied" when running run.sh
+Solution: chmod +x run.sh
+
+Problem: Chrome shows "Can't reach page"
+Solution: 
+  - Make sure Termux is running
+  - Use "localhost" not "127.0.0.1"
+  - Try closing and reopening Chrome
+
+Problem: Python not found
+Solution: pkg install python -y
+
+Problem: Dependencies fail to install
+Solution: 
+  pkg update && pkg upgrade
+  ./run.sh
+
+───────────────────────────────────────────────────────────────
+TESTING CHECKLIST:
+───────────────────────────────────────────────────────────────
+
+☐ Termux installed successfully
+☐ ZIP file extracted
+☐ run.sh executes without errors
+☐ "Running at localhost:8000" message shows
+☐ Chrome can access localhost:8000
+☐ Login screen appears
+☐ Can login with admin/admin123
+☐ Dashboard loads
+☐ Can create new experiment
+☐ Can view charts
+☐ Table scrolls on phone
+☐ Touch controls work
+☐ Can save changes
+☐ Data persists after restart
+
+───────────────────────────────────────────────────────────────
+SUCCESS INDICATORS:
+───────────────────────────────────────────────────────────────
+
+✓ Termux shows: "Running at http://localhost:8000"
+✓ Chrome loads the app interface
+✓ Mobile-responsive UI (fits your screen)
+✓ All buttons are touch-friendly
+✓ Charts display correctly
+✓ Can create and edit experiments
+
+───────────────────────────────────────────────────────────────
+WHAT TO TEST:
+───────────────────────────────────────────────────────────────
+
+1. Create new experiment
+2. Add some data
+3. View the 3 charts
+4. Toggle between line and bar charts
+5. Try editing values
+6. Save changes
+7. Close browser and Termux
+8. Restart (cd ~/ShieldAnalyser-Android && ./run.sh)
+9. Reopen in Chrome
+10. Verify data is still there
+
+───────────────────────────────────────────────────────────────
+NEED MORE HELP?
+───────────────────────────────────────────────────────────────
+
+Read these files on your Mac:
+  • TEST_ON_PHONE_GUIDE.md (detailed instructions)
+  • TESTING_COMPLETE_SUMMARY.md (full testing guide)
+  • ShieldAnalyser-Android/README-ANDROID.md (on phone)
+
+───────────────────────────────────────────────────────────────
+
+           🎉 You're Ready to Test! 🎉
+
+Follow the steps above and enjoy your app on mobile!
+
+═══════════════════════════════════════════════════════════════
+
