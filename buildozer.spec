@@ -23,7 +23,7 @@ version = 1.0.0
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy==2.3.0,android,jinja2,markupsafe
+requirements = python3,kivy==2.3.0,android,pyjnius,fastapi,uvicorn,pandas,openpyxl,python-multipart,jinja2,markupsafe,typing-extensions,starlette,anyio,sniffio,idna,certifi,pydantic,pydantic-core,annotated-types
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -82,7 +82,7 @@ android.skip_update = False
 android.accept_sdk_license = True
 
 # (str) Android entry point, default is ok for Kivy-based app
-#android.entrypoint = org.kivy.android.PythonActivity
+android.entrypoint = org.kivy.android.PythonActivity
 
 # (str) Full name including package path of the Java class that implements Android Activity
 # use that parameter together with android.entrypoint to set custom Java class instead of PythonActivity
